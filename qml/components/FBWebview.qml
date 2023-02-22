@@ -106,7 +106,7 @@ Item {
         id: sfos
     }
 
-    SilicaWebView {
+    WebView {
         id: webview
         anchors { fill: parent }
         enabled: !loading && connected
@@ -116,7 +116,7 @@ Item {
         experimental.transparentBackground: true
         experimental.customLayoutWidth: parent.width / devicePixelRatio
         experimental.overview: true
-        experimental.userAgent: "Mozilla/5.0 (Maemo; Linux; U; Jolla; Sailfish; Android 2.3.5) AppleWebKit/538.1 (KHTML, like Gecko) Version/5.1 Chrome/30.0.0.0 Mobile Safari/538.1 (compatible)"
+        httpUserAgent: "Mozilla/5.0 (Maemo; Linux; U; Jolla; Sailfish; Android 2.3.5) AppleWebKit/538.1 (KHTML, like Gecko) Version/5.1 Chrome/30.0.0.0 Mobile Safari/538.1 (compatible)"
         experimental.userStyleSheets: Qt.resolvedUrl(Util.getThemeFileName(settings.theme))
         experimental.userScripts: Qt.resolvedUrl("qrc:///js/sailbook.js")
         experimental.onMessageReceived: Messages.parse(message.data)
